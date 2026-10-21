@@ -12,4 +12,5 @@
     <!-- Municipality screen -->
     <string name="button_visit_site">Visit site</string>
     <string name="content_description_municipality_image">Photo of the selected municipality</string>
+    <string name="error_invalid_municipality">No valid municipality was received.</string>
 </resources>
