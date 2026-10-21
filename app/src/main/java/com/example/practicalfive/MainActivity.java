@@ -1,8 +1,12 @@
 package com.example.practicalfive;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.view.View;
+import android.view.inputmethod.EditorInfo;
+import android.widget.EditText;
 
 import androidx.activity.EdgeToEdge;
 import androidx.activity.SystemBarStyle;
@@ -35,5 +39,38 @@ public class MainActivity extends AppCompatActivity {
                     title.getPaddingRight(), title.getPaddingBottom());
             return insets;
         });
+
+        EditText editMunicipality = findViewById(R.id.edit_municipality);
+        editMunicipality.setOnEditorActionListener((v, actionId, event) -> {
+            boolean enterKey = event != null && event.getKeyCode() == KeyEvent.KEYCODE_ENTER;
+            boolean imeAction = actionId == EditorInfo.IME_ACTION_GO
+                    || actionId == EditorInfo.IME_ACTION_DONE;
+            if (!enterKey && !imeAction) {
+                return false;
+            }
+            // A hardware Enter key is reported twice (key down and key up): act on the press only.
+            if (!enterKey || event.getAction() == KeyEvent.ACTION_DOWN) {
+                openMunicipality(editMunicipality);
+            }
+            return true;
+        });
+    }
+
+    /**
+     * Validates the typed name with TextProcessor. An invalid name shows an error and keeps the user
+     * on this screen; a valid name is passed to the Municipality activity with an explicit Intent.
+     */
+    private void openMunicipality(EditText editMunicipality) {
+        String input = editMunicipality.getText().toString();
+        String municipality = TextProcessor.processMunicipality(input);
+        if (municipality == null) {
+            editMunicipality.setError(getString(TextProcessor.isBlank(input)
+                    ? R.string.error_empty_input
+                    : R.string.error_unsupported_municipality));
+            return;
+        }
+        Intent intent = new Intent(this, Municipality.class);
+        intent.putExtra(Municipality.EXTRA_MUNICIPALITY_NAME, municipality);
+        startActivity(intent);
     }
 }
