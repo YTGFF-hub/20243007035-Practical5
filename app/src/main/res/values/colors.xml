@@ -2,4 +2,15 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <!-- One colour per municipality (second-screen name bar, information text, Visit site button) -->
+    <color name="municipality_beijing">#FF0000</color>
+    <color name="municipality_shanghai">#FF00FF</color>
+    <color name="municipality_tianjin">#36454F</color>
+    <color name="municipality_chongqing">#FFA500</color>
+
+    <!-- General purpose colours -->
+    <color name="color_text_light">#FFFFFF</color>
+    <color name="color_text_dark">#1D1B20</color>
+    <color name="color_default_background">#FEF7FF</color>
 </resources>
