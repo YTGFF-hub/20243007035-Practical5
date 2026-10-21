@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_default_background"
+    android:orientation="vertical"
+    tools:context=".Municipality">
+
+    <TextView
+        android:id="@+id/text_municipality_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/color_title_background"
+        android:gravity="center"
+        android:padding="16dp"
+        android:textColor="@color/color_text_light"
+        android:textSize="28sp"
+        tools:text="Beijing" />
+
+    <ImageView
+        android:id="@+id/image_municipality"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:contentDescription="@string/content_description_municipality_image"
+        android:scaleType="centerCrop"
+        tools:src="@drawable/beijing" />
+
+    <!-- The ScrollView gets the space left between the image and the button (height 0dp + weight),
+         so a long summary scrolls and the Visit site button always stays on screen. -->
+    <ScrollView
+        android:id="@+id/scroll_municipality_info"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="16dp"
+        android:layout_weight="1"
+        android:background="@color/color_info_background">
+
+        <TextView
+            android:id="@+id/text_municipality_info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:lineSpacingMultiplier="1.1"
+            android:padding="12dp"
+            android:textColor="@color/color_text_dark"
+            android:textSize="14sp"
+            tools:text="@tools:sample/lorem/random" />
+
+    </ScrollView>
+
+    <Button
+        android:id="@+id/button_visit_site"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:text="@string/button_visit_site" />
+
+</LinearLayout>

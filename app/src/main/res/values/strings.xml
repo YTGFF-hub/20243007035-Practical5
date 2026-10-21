@@ -8,4 +8,8 @@
     <string name="content_description_map">Map of China highlighting Beijing, Tianjin, Chongqing and Shanghai</string>
     <string name="error_empty_input">Please enter the name of a municipality.</string>
     <string name="error_unsupported_municipality">Invalid municipality. Please enter Beijing, Shanghai, Tianjin or Chongqing.</string>
+
+    <!-- Municipality screen -->
+    <string name="button_visit_site">Visit site</string>
+    <string name="content_description_municipality_image">Photo of the selected municipality</string>
 </resources>
