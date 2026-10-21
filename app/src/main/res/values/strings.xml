@@ -13,4 +13,11 @@
     <string name="button_visit_site">Visit site</string>
     <string name="content_description_municipality_image">Photo of the selected municipality</string>
     <string name="error_invalid_municipality">No valid municipality was received.</string>
+    <string name="error_no_browser">No application is available to open the website.</string>
+
+    <!-- Official municipality websites opened by the Visit site button -->
+    <string name="url_beijing" translatable="false">https://english.beijing.gov.cn/</string>
+    <string name="url_shanghai" translatable="false">https://english.shanghai.gov.cn/</string>
+    <string name="url_tianjin" translatable="false">https://en.tj.gov.cn/</string>
+    <string name="url_chongqing" translatable="false">https://english.cq.gov.cn/</string>
 </resources>
